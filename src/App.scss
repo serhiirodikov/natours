@@ -1,0 +1,270 @@
+/*
+  COLORS:
+
+  LIGHT GREEN: #7ed56f
+  MEDIUM GREEN: #55c57a
+  DARK GREEN: #28b485
+
+ */
+$light_green: rgba(126, 213, 111, 0.8);
+$medium-green: #55c57a;
+$dark-green: rgba(40, 180, 133, 0.8);
+
+$color-grey-dark: #777;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  padding: 3rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+.header {
+  position: relative;
+  background-image: linear-gradient(to right bottom, rgba($light_green, .8), rgba($dark-green, .8)),
+  url("images/hero.jpg");
+  height: 95vh;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  background-position: top;
+  background-size: cover;
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+
+    img {
+      height: 3.5rem;
+    }
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  letter-spacing: .2rem;
+  background-image: linear-gradient(to right, rgba($light_green, .8), rgba($dark-green, .8));
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.heading-primary {
+  color: white;
+  padding-bottom: 6rem;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    font-weight: 400;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+  }
+}
+
+
+.btn {
+  font-family: 'Lato', sans-serif;
+  position: relative;
+  padding: 1.5rem 4rem;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  border-radius: 10rem;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+    display: inline-block;
+    border-radius: 10rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  }
+
+
+  &:hover:after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &--white {
+    color: $color-grey-dark;
+    background-color: white;
+
+    &:after {
+      background-color: white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+  }
+}
+
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.center-text {
+  text-align: center;
+}
+
+.margin-bottom--big {
+  margin-bottom: 8rem;
+}
+
+.margin-bottom--small {
+  margin-bottom: 1.5rem;
+}
+
+.paragraph {
+  margin-bottom: 3rem
+}
+
+.section-about {
+  padding: 25rem 0;
+  margin-top: -20vh;
+  background-color: #f7f7f7;
+
+  &--images {
+    position: relative;
+
+    img {
+      position: absolute;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: all .2s;
+      border-radius: 2px;
+
+      &:hover {
+        z-index: 20;
+        transform: scale(1.1);
+      }
+    }
+
+    img:nth-child(1) {
+      top: -2rem;
+      left: 0;
+    }
+
+    img:nth-child(2) {
+      top: 4rem;
+      right: 0;
+    }
+
+    img:nth-child(3) {
+      left: 10rem;
+      top: 12rem;
+    }
+
+  }
+}
+
+main {
+  display: block;
+}
+
+.grid {
+  display: grid;
+
+  &--2--col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+  }
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.back-red {
+  background-color: red;
+  height: 30rem;
+}
+
+.back-blue {
+  background-color: blue;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
