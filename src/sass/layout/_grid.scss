@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+
+  &--2--col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+  }
+
+  &--4--col {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6rem;
+  }
+  &--3--col {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6rem;
+  }
+}
