@@ -2,11 +2,11 @@
 .card {
   perspective: 150rem;
   position: relative;
-  border-radius: .3rem;
   height: 52rem;
   transition: all .5s;
 
   &__side {
+    border-radius: .3rem;
     position: absolute;
     top: 0;
     left: 0;

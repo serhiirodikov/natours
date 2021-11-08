@@ -5,6 +5,7 @@ import image2 from "../src/images/nat-2.jpg";
 import image3 from "../src/images/nat-3.jpg";
 import bgVideo from "../src/images/video.webm";
 import { features, stories, tours } from "./data/constants";
+import footerImage from "../src/images/logo-green-1x.png";
 
 function App() {
   return (
@@ -142,7 +143,108 @@ function App() {
             <button className="btn-text">Read all stories &rarr;</button>
           </div>
         </section>
+        <section className="section-book">
+          <div className="container">
+            <div className="book">
+              <div className="book__form">
+                <form action="/">
+                  <div className="u-margin-bottom--medium">
+                    <h2 className="heading-secondary">START BOOKING NOW</h2>
+                  </div>
+                  <div className="form__group">
+                    <input
+                      className="form__input"
+                      type="text"
+                      id="name"
+                      placeholder="Full name"
+                      required
+                    />
+                    <label className="form__label" htmlFor="name">
+                      Full name
+                    </label>
+                  </div>
+                  <div className="form__group">
+                    <input
+                      className="form__input"
+                      type="email"
+                      id="email"
+                      placeholder="Email address"
+                      required
+                    />
+                    <label htmlFor="email" className="form__label">
+                      Email address
+                    </label>
+                  </div>
+                  <div className="form__radio u-margin-bottom--medium">
+                    <div className="form__radio-group">
+                      <input
+                        type="radio"
+                        id="small"
+                        name="size"
+                        className="form__radio--input"
+                      />
+                      <label className="form__radio--label" htmlFor="small">
+                        <span className="form__radio--btn" />
+                        Small tour group
+                      </label>
+                    </div>
+                    <div className="form__radio-group">
+                      <input
+                        type="radio"
+                        id="large"
+                        name="size"
+                        className="form__radio--input"
+                      />
+                      <label className="form__radio--label" htmlFor="large">
+                        <span className="form__radio--btn" />
+                        Large tour group
+                      </label>
+                    </div>
+                  </div>
+                  <button className="btn btn--green">next step &rarr;</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+      <footer className="footer">
+        <div className="footer__logo--box">
+          <img src={footerImage} alt="footer_image" />
+        </div>
+        <div className="container">
+          <div className="grid grid--2--col">
+            <div className="footer__navigation ">
+              <ul className="footer__list">
+                <li>
+                  <a href="/">COMPANY</a>
+                </li>
+                <li>
+                  <a href="/">CONTACT US</a>
+                </li>
+                <li>
+                  <a href="/">CARRERS</a>
+                </li>
+                <li>
+                  <a href="/">PRIVACY POLICY</a>
+                </li>
+                <li>
+                  <a href="/">TERMS</a>
+                </li>
+              </ul>
+            </div>
+            <div className="footer__copy">
+              <p>
+                Built by JONAS SCHMEDTMANN for his online course ADVANCED CSS
+                AND SASS. Copyright © by Jonas Schmedtmann. You are 100% allowed
+                to use this webpage for both personal and commercial use, but
+                NOT to claim it as your own design. A credit to the original
+                author, Jonas Schmedtmann, is of course highly appreciated!
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

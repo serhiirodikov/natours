@@ -1,0 +1,43 @@
+.footer {
+  padding: 10rem 0;
+  background-color: #333;
+
+  &__logo--box {
+    margin-bottom: 8rem;
+    text-align: center;
+  }
+
+  &__navigation {
+
+  }
+
+  &__copy {
+    padding-top: 2rem;
+    border-top: 1px solid #777;
+    margin-left: 10rem;
+    font-size: 1.4rem;
+    color: #f7f7f7;
+  }
+
+  &__list {
+    list-style: none;
+    display: inline-flex;
+    gap: 1.5rem;
+    color: #f7f7f7;
+    font-size: 1.4rem;
+    border-top: 1px solid #777;
+    padding-top: 2rem;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: #f7f7f7;
+      transition: all .3s;
+
+      &:hover {
+        color: $light_green;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
