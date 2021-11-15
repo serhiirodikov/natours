@@ -3,6 +3,16 @@
   margin-top: -20vh;
   background-color: #f7f7f7;
 
+  &--text{
+    @include respond(tab-land) {
+      margin-bottom: 4rem
+    }
+  }
+
+  @include respond(tab-land) {
+    padding-top: 20rem
+  }
+
   &--images {
     position: relative;
 
@@ -13,6 +23,10 @@
       transition: all .2s;
       border-radius: 2px;
       width: 55%;
+
+      @include respond(tab-land) {
+        width: 33%;
+      }
 
       &:hover {
         z-index: 20;
@@ -29,16 +43,27 @@
     img:nth-child(1) {
       top: -2rem;
       left: 0;
+
     }
 
     img:nth-child(2) {
       top: 4rem;
       right: 0;
+
+      @include respond(tab-land) {
+        top: -2rem;
+        right: 2rem;
+      }
     }
 
     img:nth-child(3) {
       left: 10rem;
       top: 12rem;
+
+      @include respond(tab-land) {
+        top: -4rem;
+        left: 14rem
+      }
     }
 
   }
@@ -54,6 +79,10 @@ main {
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem;
+
+  @include respond(tab-land) {
+    padding: 10rem 0;
+  }
 
   & > * {
     transform: skewY(7deg);
@@ -85,11 +114,20 @@ main {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem;
+
+  @include respond(tab-land){
+    padding: 20rem 0 10rem 0;
+  }
 }
 
 .section-stories {
   padding: 15rem 0;
   position: relative;
+
+  @include respond(tab-land){
+    padding: 10rem 0;
+  }
+
 
   .bg-video {
     position: absolute;

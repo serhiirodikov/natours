@@ -2,13 +2,23 @@
   padding: 10rem 0;
   background-color: #333;
 
+  @include respond(phone){
+    padding: 4rem 0;
+  }
+
   &__logo--box {
     margin-bottom: 8rem;
     text-align: center;
-  }
 
-  &__navigation {
+    & img{
+      @include respond(phone){
+        width: 10rem;
+      }
+    }
 
+    @include respond(phone){
+      margin-bottom: 4rem;
+    }
   }
 
   &__copy {
@@ -17,6 +27,11 @@
     margin-left: 10rem;
     font-size: 1.4rem;
     color: #f7f7f7;
+    text-transform: uppercase;
+
+    @include respond(tab-land) {
+      margin: 0;
+    }
   }
 
   &__list {
@@ -28,11 +43,17 @@
     border-top: 1px solid #777;
     padding-top: 2rem;
 
+    @include respond(tab-land) {
+      display: flex;
+      justify-content: center;
+    }
+
     a {
       display: inline-block;
       text-decoration: none;
       color: #f7f7f7;
       transition: all .3s;
+
 
       &:hover {
         color: $light_green;

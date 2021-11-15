@@ -3,13 +3,46 @@ import logo from "../src/images/logo-white.png";
 import image1 from "../src/images/nat-1.jpg";
 import image2 from "../src/images/nat-2.jpg";
 import image3 from "../src/images/nat-3.jpg";
+
 import bgVideo from "../src/images/video.webm";
-import { features, stories, tours } from "./data/constants";
+import { bookingDetails, features, stories, tours } from "./data/constants";
 import footerImage from "../src/images/logo-green-1x.png";
+import { useState } from "react";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenPopUp, setSsOpenPopUp] = useState(false);
+
   return (
     <>
+      <div className="navigation">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`navigation__btn ${isOpen ? "open" : ""}`}
+        >
+          <span className="navigation__icon" />
+        </button>
+        <div className={`navigation__background ${isOpen ? "open" : ""}`} />
+        <nav className="navigation__nav">
+          <ul className="navigation__list">
+            <li>
+              <a href="/">01 ABOUT NATOUS</a>
+            </li>
+            <li>
+              <a href="/">02 YOUR BENFITS</a>
+            </li>
+            <li>
+              <a href="/">03 POPULAR TOURS</a>
+            </li>
+            <li>
+              <a href="/">04 STORIES</a>
+            </li>
+            <li>
+              <a href="/">05 BOOK NOW</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <header className="header">
         <div className="header__logo-box">
           <img src={logo} alt="logo" />
@@ -32,7 +65,7 @@ function App() {
             </h1>
           </div>
           <div className="container grid grid--2--col">
-            <div>
+            <div className="section-about--text">
               <h1 className="heading-tertiary u-margin-bottom--small">
                 YOU'RE GOING TO FALL IN LOVE WITH NATURE
               </h1>
@@ -99,7 +132,12 @@ function App() {
                       <p className="card__price-only">only</p>
                       <p className="card__price-value">{`${tour.price}$`}</p>
                     </div>
-                    <button className="btn btn--white">book now!</button>
+                    <button
+                      className="btn btn--white"
+                      onClick={() => setSsOpenPopUp(true)}
+                    >
+                      book now!
+                    </button>
                   </div>
                 </div>
               </div>
@@ -235,16 +273,45 @@ function App() {
             </div>
             <div className="footer__copy">
               <p>
-                Built by JONAS SCHMEDTMANN for his online course ADVANCED CSS
-                AND SASS. Copyright © by Jonas Schmedtmann. You are 100% allowed
-                to use this webpage for both personal and commercial use, but
-                NOT to claim it as your own design. A credit to the original
-                author, Jonas Schmedtmann, is of course highly appreciated!
+                Designed by JONAS SCHMEDTMANN.
+                <br /> Developed by Me:)
               </p>
             </div>
           </div>
         </div>
       </footer>
+      {isOpenPopUp && (
+        <div className="popup">
+          {bookingDetails.map(
+            ({ firstImg, secondImg, title, subTitle, description }, index) => (
+              <div key={index} className="popup__content">
+                <div className="popup__left">
+                  <img src={firstImg} alt="img" />
+                  <img src={secondImg} alt="img" />
+                </div>
+                <div className="popup__right">
+                  <h2 className="heading-secondary u-margin-bottom--small">
+                    {title}
+                  </h2>
+                  <h3 className="heading-tertiary u-margin-bottom--small">
+                    {subTitle}
+                  </h3>
+                  <p className="popup__text">{description}</p>
+                  <button className="btn btn--green u-fit-content">
+                    book now
+                  </button>
+                  <button
+                    onClick={() => setSsOpenPopUp(false)}
+                    className="popup__icon--box"
+                  >
+                    <span className="popup__icon" />
+                  </button>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      )}
     </>
   );
 }

@@ -1,0 +1,133 @@
+.navigation {
+  &__background {
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient($light_green, $dark-green);
+    clip-path: circle(2rem at calc(100vw - 9rem) 9rem);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2001;
+    transition: all .5s;
+
+    @include respond(phone){
+      clip-path: circle(2rem at calc(100vw - 6rem) 6rem);
+
+    }
+
+    &.open {
+      clip-path: circle(100%);
+    }
+  }
+
+
+  &__nav {
+    visibility: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100vw, -50%);
+    position: fixed;
+    text-align: center;
+    z-index: 2002;
+    transition: all .3s;
+
+  }
+
+  &__background.open + &__nav {
+    width: 100%;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+
+  }
+
+
+  &__list {
+    list-style: none;
+    font-size: 3rem;
+    color: white;
+
+    li a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      padding: 1rem 2rem;
+      font-weight: 300;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+      background-size: 220%;
+      transition: all .4s;
+
+      &:hover {
+        background-position: 100%;
+        color: $medium-green;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    position: fixed;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50rem;
+    top: 6rem;
+    right: 6rem;
+    background-color: white;
+    z-index: 2003;
+    cursor: pointer;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .10);
+
+    @include respond(phone){
+      top: 3rem;
+      right: 3rem;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    height: .2rem;
+    width: 3rem;
+    background-color: #333333;
+    z-index: 2004;
+    position: relative;
+
+    &:after, &:before {
+      content: '';
+      left: 0;
+      position: absolute;
+      height: .2rem;
+      width: 3rem;
+      background-color: #333333;
+      transition: all .3s;
+    }
+
+    &:after {
+      top: .6rem;
+    }
+
+    &:before {
+      top: -.6rem;
+    }
+  }
+
+  &__btn.open &__icon:after {
+    top: 0;
+    transform: rotate(-135deg);
+    opacity: 1
+  }
+
+  &__btn.open &__icon {
+    background: transparent;
+  }
+
+  &__btn.open &__icon:before {
+    top: 0;
+    transform: rotate(135deg)
+  }
+}

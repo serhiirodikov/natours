@@ -9,11 +9,23 @@
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.10);
 
+  @include respond(tab-land) {
+    flex-direction: column;
+    transform: skew(0);
+    padding: 3rem;
+
+  }
+  @include respond(phone) {
+    width: 90%;
+
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
     position: relative;
     clip-path: circle(50% at 50% 50%);
+    align-self: center;
 
     img {
       height: 100%;
@@ -40,17 +52,29 @@
     opacity: 1;
   }
 
-  &:hover &__shape img{
+  &:hover &__shape img {
     filter: blur(3px) brightness(80%);
-
   }
 
   & > * {
     transform: skew(12deg);
+
+    @include respond(tab-land) {
+      transform: skew(0);
+    }
   }
 }
 
-.story-container{
+.story-container {
   width: 114rem;
   margin: 0 auto 8rem auto;
+
+  @include respond(tab-land) {
+    width: 50rem;
+    margin: 0 auto 4rem auto;
+  }
+  @include respond(phone) {
+    width: 100%;
+    margin: 0 auto 4rem auto;
+  }
 }

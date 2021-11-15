@@ -1,6 +1,10 @@
 
 .u-margin-bottom--big {
   margin-bottom: 8rem;
+
+  @include respond(tab-land){
+    margin-bottom: 5rem;
+  }
 }
 
 .u-margin-bottom--small {
@@ -18,6 +22,11 @@
 .u-center-text {
   text-align: center;
 }
-.u-gap-huge{
+
+.u-gap-huge {
   gap: 25rem;
+}
+
+.u-fit-content {
+  width: fit-content;
 }

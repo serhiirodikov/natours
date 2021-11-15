@@ -12,16 +12,23 @@
 @import "layout/header";
 @import "layout/grid";
 @import "layout/footer";
+@import "layout/navigation";
 
 @import "components/button";
 @import "components/card";
 @import "components/story";
 @import "components/book";
+@import "components/popup";
 
 
 
 .container {
   max-width: 114rem;
   margin: 0 auto;
+
+  @include respond(tab-port){
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
 }
 

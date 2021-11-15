@@ -2,9 +2,19 @@
   background-image: linear-gradient(106deg, rgba(255, 255, 255, .9) 50%, rgba(255, 255, 255, .9) 50%, transparent 50%), url("../../images/nat-10.jpg");
   background-size: 100%;
 
+  @include respond(tab-port) {
+    background-image: linear-gradient(rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .9) 100%), url("../../images/nat-10.jpg");
+    background-size: cover;
+
+  }
+
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
 
     .form__group {
       margin-bottom: 2rem;
@@ -19,6 +29,10 @@
         opacity: 1;
         transform: translateY(0);
         transition: all .3s;
+
+        @include respond(tab-land) {
+          width: 100%
+        }
 
         &:focus:invalid {
           border-bottom: 3px solid red;
@@ -54,7 +68,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  &--input{
+  @include respond(tab-land) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  &--input {
     display: none;
   }
 
@@ -74,6 +93,7 @@
     position: absolute;
     top: -.4rem;
     left: 0;
+
     &:after {
       content: '';
       position: absolute;
