@@ -106,23 +106,23 @@ export const bookingDetails = [
 
 export const navList = [
   {
-    id: "#about",
+    id: "about",
     title: "01 ABOUT NATOUS",
   },
   {
-    id: "#feature",
+    id: "feature",
     title: "02 YOUR BENFITS",
   },
   {
-    id: "#tours",
+    id: "tours",
     title: "03 POPULAR TOURS",
   },
   {
-    id: "#stories",
+    id: "stories",
     title: "04 STORIES",
   },
   {
-    id: "#book",
+    id: "book",
     title: "05 BOOK NOW",
   },
 ];

@@ -1,24 +1,7 @@
-export const NavListItem = ({ title, id, setIsOpen }) => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    setIsOpen(false);
-
-    const scrollToItem = document.querySelector(
-      e.currentTarget.getAttribute("href")
-    );
-
-    setTimeout(
-      () =>
-        scrollToItem.scrollIntoView({
-          behavior: "smooth",
-        }),
-      200
-    );
-  };
-
+export const NavListItem = ({ title, id, handleClick }) => {
   return (
     <li>
-      <a onClick={handleClick} href={id}>
+      <a onClick={handleClick} name={id} href="/">
         {title}
       </a>
     </li>

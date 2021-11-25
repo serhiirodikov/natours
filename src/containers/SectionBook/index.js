@@ -1,8 +1,8 @@
 import { ButtonMain } from "../../components/ButtonMain";
 
-export const SectionBook = () => {
+export const SectionBook = ({ refs, value }) => {
   return (
-    <section id="book" className="section-book">
+    <section ref={value === "book" ? refs : null} className="section-book">
       <div className="container">
         <div className="book">
           <div className="book__form">

@@ -2,9 +2,9 @@ import { MainTitle } from "../../components/MainTitle";
 import { tours } from "../../data/constants";
 import { ButtonMain } from "../../components/ButtonMain";
 
-export const SectionTours = ({ setSsOpenPopUp }) => {
+export const SectionTours = ({ setSsOpenPopUp, refs, value }) => {
   return (
-    <section id="tours" className="section-tours">
+    <section ref={value === "tours" ? refs : null} className="section-tours">
       <MainTitle title={"MOST POPULAR TOURS"} />
       <div className="container grid grid--3--col">
         {tours.map((tour, index) => (

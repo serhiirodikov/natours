@@ -1,10 +1,7 @@
-import { useState } from "react";
 import { NavListItem } from "../../components/Navigation/NavListItem";
 import { navList } from "../../data/constants";
 
-export const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+export const Navigation = ({ handleClick, setIsOpen, isOpen }) => {
   return (
     <div className="navigation">
       <button
@@ -18,6 +15,7 @@ export const Navigation = () => {
         <ul className="navigation__list">
           {navList.map(({ title, id }, index) => (
             <NavListItem
+              handleClick={handleClick}
               key={index}
               title={title}
               id={id}

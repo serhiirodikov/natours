@@ -3,9 +3,12 @@ import { MainTitle } from "../../components/MainTitle";
 import { stories } from "../../data/constants";
 import { ButtonText } from "../../components/ButtonText";
 
-export const SectionStories = () => {
+export const SectionStories = ({ refs, value }) => {
   return (
-    <section id="stories" className="section-stories">
+    <section
+      ref={value === "stories" ? refs : null}
+      className="section-stories"
+    >
       <div className="bg-video">
         <video src={bgVideo} autoPlay muted loop />
       </div>

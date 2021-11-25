@@ -6,9 +6,9 @@ import image3 from "../../images/nat-3.jpg";
 import { sectionAbout } from "../../data/constants";
 import { ButtonText } from "../../components/ButtonText";
 
-export const SectionAbout = () => {
+export const SectionAbout = ({ refs, value }) => {
   return (
-    <section id="about" className="section-about">
+    <section ref={value === "about" ? refs : null} className="section-about">
       <MainTitle title={"EXCITING TOURS FOR ADVENTUROUS PEOPLE"} />
       <div className="container grid grid--2--col">
         <div className="section-about--text">

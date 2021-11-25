@@ -1,8 +1,11 @@
 import { features } from "../../data/constants";
 
-export const SectionFeatures = () => {
+export const SectionFeatures = ({ refs, value }) => {
   return (
-    <section id="feature" className="section-features">
+    <section
+      ref={value === "feature" ? refs : null}
+      className="section-features"
+    >
       <div className="container grid grid--4--col">
         {features.map((feature, index) => (
           <div key={index} className="section-features--card">
