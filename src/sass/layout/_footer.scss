@@ -2,7 +2,7 @@
   padding: 10rem 0;
   background-color: #333;
 
-  @include respond(phone){
+  @include respond(phone) {
     padding: 4rem 0;
   }
 
@@ -10,13 +10,13 @@
     margin-bottom: 8rem;
     text-align: center;
 
-    & img{
-      @include respond(phone){
+    & img {
+      @include respond(phone) {
         width: 10rem;
       }
     }
 
-    @include respond(phone){
+    @include respond(phone) {
       margin-bottom: 4rem;
     }
   }

@@ -100,6 +100,60 @@ export const bookingDetails = [
     title: "START BOOKING NOW",
     subTitle: "IMPORTANT – PLEASE READ THESE TERMS BEFORE BOOKING",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit amet massa vitae. Mi bibendum neque egestas congue. Placerat orci nulla pellentesque dignissim enim sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et. Proin fermentum leo vel orci porta non pulvinar neque laoreet. Gravida neque convallis a cras semper. Molestie at elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet sit. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi porta.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit amet massa vitae. Mi bibendum neque egestas congue. Placerat orci nulla pellentesque dignissim enim sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus et.",
+  },
+];
+
+export const navList = [
+  {
+    id: "#about",
+    title: "01 ABOUT NATOUS",
+  },
+  {
+    id: "#feature",
+    title: "02 YOUR BENFITS",
+  },
+  {
+    id: "#tours",
+    title: "03 POPULAR TOURS",
+  },
+  {
+    id: "#stories",
+    title: "04 STORIES",
+  },
+  {
+    id: "#book",
+    title: "05 BOOK NOW",
+  },
+];
+
+export const sectionAbout = [
+  {
+    title: "YOU'RE GOING TO FALL IN LOVE WITH NATURE",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.",
+  },
+  {
+    title: "YOU'RE GOING TO FALL IN LOVE WITH NATURE",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.",
+  },
+];
+
+export const footerList = [
+  {
+    title: "COMPANY",
+  },
+  {
+    title: "CONTACT US",
+  },
+  {
+    title: "CARRERS",
+  },
+  {
+    title: "PRIVACY POLICY",
+  },
+  {
+    title: "TERMS",
   },
 ];
